@@ -1,0 +1,27 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+    <title>Made by mechanical means — room</title>
+    <link rel="stylesheet" href="/src/style.css" />
+  </head>
+  <body>
+    <canvas id="stage"></canvas>
+    <nav id="views" aria-label="房间机位">
+      <span class="views-label">房间视角</span>
+      <button type="button" data-view="desk" aria-pressed="true"><kbd>1</kbd> 主桌</button>
+      <button type="button" data-view="computer" aria-pressed="false"><kbd>2</kbd> 电脑角</button>
+      <button type="button" data-view="side" aria-pressed="false"><kbd>3</kbd> 侧面</button>
+      <button type="button" id="free-view" aria-pressed="false"><kbd>F</kbd> 自由查看</button>
+    </nav>
+    <div id="hud">
+      <div class="row">
+        <span class="label">ROOM</span>
+        <span class="value" id="stat">booting</span>
+      </div>
+      <div class="hint" id="view-hint">选择机位 · Esc 返回主桌 · F 自由查看</div>
+    </div>
+    <script type="module" src="/src/main.ts"></script>
+  </body>
+</html>

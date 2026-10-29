@@ -1,0 +1,35 @@
+{
+  "name": "eayon",
+  "version": "1.0.0",
+  "description": "A warm, interactive 3D room built with Three.js and Blender.",
+  "main": "index.html",
+  "scripts": {
+    "dev": "vite --host 127.0.0.1 --port 9100",
+    "build": "tsc --noEmit && vite build",
+    "preview": "vite preview --host 127.0.0.1 --port 9101",
+    "room": "Blender -b -P blender/props/room.py -- --out public/assets/room.glb --blend build/room.blend --render build/room.png",
+    "shot": "node tools/shot.mjs"
+  },
+  "keywords": ["three.js", "vite", "typescript", "blender", "webgl", "3d"],
+  "author": "Eayon <eayonlee@foxmail.com>",
+  "license": "ISC",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/EayonLee/MyRoom.git"
+  },
+  "bugs": {
+    "url": "https://github.com/EayonLee/MyRoom/issues"
+  },
+  "homepage": "https://github.com/EayonLee/MyRoom#readme",
+  "type": "module",
+  "devDependencies": {
+    "@types/node": "^26.6.6",
+    "@types/three": "^0.186.0",
+    "playwright": "^1.64.1",
+    "typescript": "^7.0.2",
+    "vite": "^8.3.5"
+  },
+  "dependencies": {
+    "three": "^0.186.1"
+  }
+}

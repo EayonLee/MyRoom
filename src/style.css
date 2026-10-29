@@ -1,0 +1,123 @@
+:root {
+  --ink: #e8e2d4;
+  --dim: #8d8474;
+  --bg: #0a0908;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  margin: 0;
+  height: 100%;
+  background: var(--bg);
+  color: var(--ink);
+  font-family: ui-monospace, "SF Mono", "JetBrains Mono", Menlo, monospace;
+  overflow: hidden;
+}
+
+#stage {
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+
+body.free-view #stage {
+  cursor: grab;
+}
+
+body.free-view #stage:active {
+  cursor: grabbing;
+}
+
+#views {
+  position: fixed;
+  top: max(18px, env(safe-area-inset-top));
+  left: max(18px, env(safe-area-inset-left));
+  right: max(18px, env(safe-area-inset-right));
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 8px;
+  text-shadow: 0 1px 8px rgb(0 0 0 / 90%);
+}
+
+.views-label {
+  margin-right: 5px;
+  color: var(--ink);
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+}
+
+#views button {
+  border: 1px solid rgb(232 226 212 / 24%);
+  border-radius: 4px;
+  padding: 8px 10px;
+  background: rgb(16 13 10 / 70%);
+  color: var(--ink);
+  font: inherit;
+  font-size: 11px;
+  cursor: pointer;
+}
+
+#views button:hover,
+#views button[aria-pressed="true"] {
+  border-color: #d4b58b;
+  background: rgb(87 62 40 / 85%);
+}
+
+#views button:focus-visible {
+  outline: 2px solid #f1d2a4;
+  outline-offset: 2px;
+}
+
+#views kbd {
+  margin-right: 4px;
+  color: #d4b58b;
+  font: inherit;
+}
+
+@media (max-width: 560px) {
+  #views { gap: 5px; }
+  .views-label { width: 100%; }
+  #views button { padding: 7px; }
+}
+
+#hud {
+  position: fixed;
+  left: max(18px, env(safe-area-inset-left));
+  bottom: max(18px, env(safe-area-inset-bottom));
+  pointer-events: none;
+  font-size: 11px;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  line-height: 1.7;
+  text-shadow: 0 1px 8px rgb(0 0 0 / 90%);
+}
+
+#hud .row {
+  display: flex;
+  gap: 10px;
+  align-items: baseline;
+}
+
+#hud .label {
+  color: var(--dim);
+}
+
+#hud .value {
+  color: var(--ink);
+  font-variant-numeric: tabular-nums;
+}
+
+#hud .hint {
+  margin-top: 6px;
+  color: var(--dim);
+  letter-spacing: 0.08em;
+  text-transform: none;
+  font-size: 10px;
+  opacity: 0.75;
+}

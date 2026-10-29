@@ -1,0 +1,13 @@
+# Keep source and configuration files consistent across platforms.
+* text=auto eol=lf
+
+# Binary assets should not be normalized or diffed as text.
+*.blend binary
+*.glb binary
+*.gltf binary
+*.jpg binary
+*.jpeg binary
+*.png binary
+*.webp binary
+*.ico binary
+
